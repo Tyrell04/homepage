@@ -14,12 +14,3 @@
 		</Row>
 	</Grid>
 </Content>
-
-<style lang="scss">
-	.error {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-</style>
-

@@ -1,8 +1,8 @@
-<script lang="js">
-	import * as config from '$lib/config';
+<script lang="ts">
+	import * as config from '$lib/config.js';
+	import PostCard from '$lib/components/PostCard.svelte';
 
-	export let data;
-	console.log(data);
+	export let data
 </script>
 
 <svelte:head>
@@ -13,10 +13,7 @@
 <section>
 	<ul class="posts">
 		{#each data.posts as post}
-			<li class="post">
-				<a href='blog/{post.slug}' class="title">{post.title}</a>
-				<p class="description">{post.description}</p>
-			</li>
+			<PostCard {post} />
 		{/each}
 	</ul>
 </section>

@@ -83,18 +83,11 @@
         gap: 1rem;
     }
 
-    .section-grid {
-        margin: 4rem 0;
-    }
-
-
-
     h3 {
         font-size: 1.5rem;
         margin-bottom: 1rem;
         color: var(--cds-text-01);
     }
-
 
     p {
         color: var(--cds-text-02);

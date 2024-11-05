@@ -1,4 +1,5 @@
 import { json } from '@sveltejs/kit'
+import type { Post } from '$lib/types';
 
 async function getPosts() {
 	let posts = []
@@ -12,7 +13,7 @@ async function getPosts() {
 		const slug = path.split('/').at(-1)?.replace('.svx', '')
 
 		if (file && typeof file === 'object' && 'metadata' in file && slug) {
-			const metadata = file.metadata
+			const metadata = file.metadata as Omit<Post, 'slug'>
 			const post = { ...metadata, slug }
 			// Only include published posts
 			if (post.published) posts.push(post)

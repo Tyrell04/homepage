@@ -1,5 +1,7 @@
+import type { Post } from '$lib/types.ts'
+
 export async function load({ fetch }) {
 	const response = await fetch('api/posts')
-	const posts = await response.json()
+	const posts: Post[] = await response.json()
 	return { posts }
 }

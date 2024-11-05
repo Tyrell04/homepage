@@ -1,6 +1,3 @@
-@use 'sass:map';
-
-// Base color palette
 $colors: (
         'green': (
                 50: #d8f3dc,   // Lightest (Nyanza)
@@ -14,9 +11,3 @@ $colors: (
                 900: #081c15   // Darkest (Dark Green)
         )
 );
-
-:root {
-  --colorPrimary: #{map.get(map.get($colors, 'green'), 600)};
-  --colorSecondary: #{map.get(map.get($colors, 'green'), 400)};
-  --colorAccent: #{map.get(map.get($colors, 'green'), 300)};
-}

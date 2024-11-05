@@ -6,8 +6,8 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
 		"lint": "prettier --check ."
 	},
@@ -16,6 +16,8 @@
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
+		"@tsconfig/svelte": "^5.0.4",
+		"@types/node": "^22.9.0",
 		"carbon-components": "^10.58.15",
 		"carbon-preprocess-svelte": "^0.11.7",
 		"mdsvex": "^0.11.2",
@@ -23,8 +25,9 @@
 		"prettier-plugin-svelte": "^3.2.6",
 		"sass": "^1.80.6",
 		"svelte": "^5.0.0",
-		"svelte-check": "^4.0.0",
-		"typescript": "^5.0.0",
+		"svelte-check": "^4.0.5",
+		"svelte-preprocess": "^6.0.3",
+		"typescript": "^5.6.3",
 		"vite": "^5.0.3"
 	},
 	"dependencies": {
