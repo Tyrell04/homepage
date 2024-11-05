@@ -16,6 +16,10 @@ Thumbs.db
 !.env.example
 !.env.test
 
+**/package-lock.json
+
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+.idea

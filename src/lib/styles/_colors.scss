@@ -1,0 +1,22 @@
+@use 'sass:map';
+
+// Base color palette
+$colors: (
+        'green': (
+                50: #d8f3dc,   // Lightest (Nyanza)
+                100: #b7e4c7,  // Celadon
+                200: #95d5b2,  // Celadon-2
+                300: #74c69d,  // Mint
+                400: #52b788,  // Mint-2
+                500: #40916c,  // Sea Green
+                600: #2d6a4f,  // Dartmouth Green
+                700: #1b4332,  // Brunswick Green
+                900: #081c15   // Darkest (Dark Green)
+        )
+);
+
+:root {
+  --colorPrimary: #{map.get(map.get($colors, 'green'), 600)};
+  --colorSecondary: #{map.get(map.get($colors, 'green'), 400)};
+  --colorAccent: #{map.get(map.get($colors, 'green'), 300)};
+}
