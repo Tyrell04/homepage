@@ -1,5 +1,6 @@
 <script>
-	import { Content, Grid, Row, Column, Link } from "carbon-components-svelte";
+	import { Content, Grid, Row, Column } from "carbon-components-svelte";
+	import { page } from '$app/stores'
 </script>
 <svelte:head>
 	<title>404</title>
@@ -7,13 +8,18 @@
 <Content class="container">
 	<Grid>
 		<Row>
-			<Column>
-				<h1>404</h1>
-				<div>
-					Page not found.
-					<Link href="/">Return home</Link>
-				</div>
+			<Column class="error">
+				<h1>{$page.status}: {$page.error?.message}</h1>
 			</Column>
 		</Row>
 	</Grid>
 </Content>
+
+<style lang="scss">
+	.error {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+</style>
+
