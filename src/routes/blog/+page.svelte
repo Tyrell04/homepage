@@ -1,6 +1,7 @@
 <script lang="ts">
 	import * as config from '$lib/config.js';
 	import PostCard from '$lib/components/PostCard.svelte';
+	import { Column, Content, Grid, Row } from 'carbon-components-svelte';
 
 	export let data
 </script>
@@ -9,11 +10,18 @@
 	<title>{config.title}</title>
 </svelte:head>
 
-<!-- Posts -->
-<section>
-	<ul class="posts">
-		{#each data.posts as post}
-			<PostCard {post} />
-		{/each}
-	</ul>
-</section>
+
+<Content>
+	<Grid padding>
+		<Row padding>
+			{#each data.posts as post}
+				<Column padding>
+					<PostCard {post} />
+				</Column>
+			{/each}
+		</Row>
+	</Grid>
+</Content>
+
+<style>
+</style>
