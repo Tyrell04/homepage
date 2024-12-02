@@ -11,8 +11,8 @@
 </script>
 
 
-<Tile class="post-card">
-	<h2 class="post-title">
+<Tile>
+	<h2>
 	<Link href="/blog/{post.slug}">{post.title}</Link>
 	</h2>
 	{#each post.categories as category}

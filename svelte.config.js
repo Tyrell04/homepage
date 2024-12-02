@@ -1,7 +1,24 @@
-import { mdsvex } from 'mdsvex';
+import { mdsvex, escapeSvelte } from 'mdsvex';
 import adapter from '@sveltejs/adapter-auto';
 import { optimizeImports } from "carbon-preprocess-svelte";
 import { sveltePreprocess } from 'svelte-preprocess';
+import { createHighlighter } from 'shiki';
+
+const theme = 'github-dark';
+const highlighter = await createHighlighter({
+	themes: [theme],
+	langs: ['javascript', 'typescript']
+});
+
+/** @type {import('mdsvex').MdsvexOptions} */
+const mdsvexOptions = {
+	highlight: {
+		highlighter: async (code, lang = 'text') => {
+			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme }));
+			return `{@html \`${html}\` }`;
+		}
+	},
+}
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -13,7 +30,9 @@ const config = {
 	},
 
 	preprocess: [
-		mdsvex(),
+		mdsvex(
+			mdsvexOptions
+		),
 		sveltePreprocess({
 			typescript: true
 		}),
